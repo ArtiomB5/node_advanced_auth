@@ -94,6 +94,11 @@ class UserService {
     const token = await tokenService.removeToken(refreshToken);
     return token;
   }
+
+  async getAllUsers() {
+    const users = await UserModel.find();
+    return users;
+  }
 }
 
 module.exports = new UserService();
